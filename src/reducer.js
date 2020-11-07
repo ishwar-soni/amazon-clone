@@ -1,15 +1,6 @@
 export const initialState = {
-  basket: [
-    // {
-    //   id: "12321341",
-    //   title:
-    //     "Oppo A52 (Twilight Black, 6GB RAM, 128GB Storage) with No Cost EMI/Additional Exchange Offers",
-    //   price: 13990.0,
-    //   rating: 4,
-    //   image:
-    //     "https://images-na.ssl-images-amazon.com/images/I/71FPmXaDfbL._SL1500_.jpg",
-    // },
-  ],
+  basket: [],
+  user: null,
 };
 
 export const getBasketTotal = (basket) =>
@@ -17,6 +8,12 @@ export const getBasketTotal = (basket) =>
 
 function reducer(state, action) {
   switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
+
     case "ADD_TO_BASKET":
       return {
         ...state,
